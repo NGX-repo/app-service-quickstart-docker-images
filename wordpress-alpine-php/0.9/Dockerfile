@@ -12,7 +12,7 @@ ENV SUPERVISOR_LOG_DIR "/var/log/supervisor"
 
 ENV SSH_PASSWD "root:Docker!"
 ENV SSH_PORT 2222
-#nginx
+#ngi nx
 ENV NGINX_LOG_DIR "/var/log/nginx"
 #php
 ENV PHP_HOME "/usr/local/etc/php"
@@ -43,6 +43,10 @@ COPY uploads.ini /usr/local/etc/php/conf.d/
 COPY nginx_conf/nginx.conf /etc/nginx/nginx.conf
 COPY nginx_conf/default.conf /etc/nginx/conf.d/default.conf
 COPY nginx_conf/spec-settings.conf /etc/nginx/conf.d/spec-settings.conf
+
+# override nginx ss
+COPY sshd_config /etc/ssh/sshd_config
+
 
 #
 COPY local_bin/. /usr/local/bin/
